@@ -1,4 +1,4 @@
-file = open("D:\\python\\icp2\\abc.txt","r+")
+file = open("/Users/abhiram/python-/ICP2/abc.txt")
 wordcount={}
 for word in file.read().split():
     if word.lower() not in wordcount:

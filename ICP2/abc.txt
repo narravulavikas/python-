@@ -1,2 +1,2 @@
-Python is good
-python is GOOD
+Python Course
+Deep Learning Course
