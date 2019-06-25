@@ -10,7 +10,7 @@ import pandas as pd
 
 # Importing the dataset
 
-dataset = pd.read_csv('/Users/abhiram/Library/Preferences/PyCharmCE2019.1/scratches/glass.csv')
+dataset = pd.read_csv('D:\Github\python\ ICP4\glass.csv')
 
 
 # looking at the first 9 values of the dataset
@@ -39,8 +39,6 @@ y_pred = nvclassifier.predict(X_test)
 # lets see the actual and predicted value side by side
 y_compare = np.vstack((y_test, y_pred)).T
 # actual value on the left side and predicted value on the right hand side
-# printing the top 9 values
-#print(y_compare[:3, :])
 
 
 # Accuracy of NavesBayes on Training Sets

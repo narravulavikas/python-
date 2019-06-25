@@ -1,4 +1,4 @@
-file = open("D:\Github\python-\ICP2\abc.txt")
+file = open("D:\Github\python\ICP2\abc.txt")
 wordcount={}
 for word in file.read().split():
     if word.lower() not in wordcount:
@@ -7,7 +7,7 @@ for word in file.read().split():
         wordcount[word.lower()] += 1
 print(wordcount)
 file.close()
-f = open("D:\\python\\icp2\\abc.txt", "w+")
+f = open("D:\\Github\\\python\\icp2\\abc.txt", "w+")
 for i in wordcount:
      f.write(i+" : "+str(wordcount[i])+"\n")
 f.close()
