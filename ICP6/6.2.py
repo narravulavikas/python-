@@ -2,7 +2,7 @@ from sklearn.decomposition import PCA
 # Make an instance of the Model
 import pandas as pd
 import numpy as np
-train = pd.read_csv('CC.csv')
+train = pd.read_csv('D:\Github\python\ICP6\CC.csv')
 desired_width=320
 
 pd.set_option('display.width', desired_width)

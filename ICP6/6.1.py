@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
 
-train = pd.read_csv('CC.csv')
+train = pd.read_csv('D:\Github\python\ICP6\CC.csv')
 #print(pd.DataFrame(train.isnull()))
 data = train.select_dtypes(include=[np.number]).interpolate().fillna(train.select_dtypes(include=[np.number]).interpolate().mean(axis=0))
 #print(train.select_dtypes(include=[np.number]).interpolate().mean(axis=0))
