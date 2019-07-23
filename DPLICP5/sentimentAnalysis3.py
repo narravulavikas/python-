@@ -4,8 +4,8 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 from sklearn.feature_extraction.text import CountVectorizer
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-from keras.models import Sequential
-from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
+from keras.models import Sequential,Model
+from keras.layers import Input,Dense, Embedding, LSTM, SpatialDropout1D,Dropout
 from sklearn.model_selection import train_test_split
 from keras.utils.np_utils import to_categorical
 import re
@@ -34,13 +34,15 @@ embed_dim = 128
 from sklearn.preprocessing import LabelEncoder
 lstm_out = 196
 def createmodel():
-    model = Sequential()
-    model.add(Embedding(max_fatures, embed_dim,input_length = X.shape[1]))
-    model.add(SpatialDropout1D(0.4))
-    model.add(LSTM(lstm_out, dropout=0.2, recurrent_dropout=0.2))
-    model.add(Dense(2,activation='softmax'))
-    model.compile(loss = 'categorical_crossentropy', optimizer='adam',metrics = ['accuracy'])
-    return model
+     model = Sequential()
+     model.add(Embedding(max_fatures, embed_dim,input_length = X.shape[1]))
+     model.add(SpatialDropout1D(0.4))
+     model.add(LSTM(lstm_out, dropout=0.5, recurrent_dropout=0.5))
+     model.add(Dense(512, activation='relu'))
+     model.add(Dense(256, activation='tanh'))
+     model.add(Dense(2, activation='softmax'))
+     model.compile(loss = 'categorical_crossentropy', optimizer='adam',metrics = ['accuracy'])
+     return model
 # print(model.summary())
 
 labelencoder = LabelEncoder()

@@ -1,11 +1,11 @@
 from keras import Sequential
-from keras.datasets import mnist
+from keras.datasets import fashion_mnist
 import numpy as np
 import matplotlib.pyplot as plt
 from keras.layers import Dense
 from keras.utils import to_categorical
 
-(train_images,train_labels),(test_images, test_labels) = mnist.load_data()
+(train_images,train_labels),(test_images, test_labels) = fashion_mnist.load_data()
 #display the first image in the training data
 plt.imshow(train_images[0,:,:],cmap='gray')
 plt.title('Ground Truth : {}'.format(train_labels[0]))
